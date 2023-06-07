@@ -3,6 +3,8 @@ let ctx= canvas.getContext('2d');
 let player = new Player(150,15,ctx)
 let ball = new Ball(470,310,ctx);
 
+
+// ok
 canvas.height = 620;
 canvas.width = 940;
 
