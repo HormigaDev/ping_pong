@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ping pong</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="grid">
+        <div id="menu">
+            <form action="">
+                <div class="form-group">
+                    <label for="ball_size">Tamanho da bola</label>
+                    <select name="ball_size" id="ball_size">
+                        <option value="normal">Normal</option>
+                        <option value="small">Pequena</option>
+                        <option value="big">Grande</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ball_speed">Velocidade da bola</label>
+                    <input type="number" id="ball_speed" name="ball_speed" value="6">
+                </div>
+                <div class="form-group">
+                    <label for="player_bar_size">Tamanho da barra do jogador</label>
+                    <select name="player_bar_size" id="player_bar_size">
+                        <option value="normal">Normal</option>
+                        <option value="small">Pequeno</option>
+                        <option value="big">Grande</option>
+                        <option value="large">Muito Grande</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="player_speed">Velocidade do jogador</label>
+                    <select name="player_speed" id="player_speed">
+                        <option value="normal">Normal</option>
+                        <option value="slow">Lento</option>
+                        <option value="fast">Rápido</option>
+                        <option value="very_fast">Muito Rápido</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="blocks_size">Tamanho dos blocos</label>
+                    <select name="blocks_size" id="blocks_size">
+                        <option value="big">Grande</option>
+                        <option value="normal">Normal</option>
+                        <option value="small">Pequeno</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="blocks_rows">Filas de blocos</label>
+                    <input type="number" id="blocks_rows" name="blocks_rows" value="3">
+                </div>
+                <div class="form-group submit">
+                    <button type="submit" id="start">Começar</button>
+                </div>
+            </form>
+        </div>
+        <div id="content">
+            <canvas id="canvas">
+            </canvas>
+            <div id="content-message">
+                <h1 id="message"></h1>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/scripts.js" type="module"></script>
+</body>
+</html>
