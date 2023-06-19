@@ -9,6 +9,7 @@ export default class Ball {
         this.radius = 10;
         this.color = '#fafafa';
         this.speed = 1;
+        this.behavior = 'phisic';
     }
     draw(ctx){
         ctx.beginPath();
@@ -84,7 +85,30 @@ export default class Ball {
             if(this.x-(this.radius/2) >= player.x && this.x-(this.radius/2) <= player.x+player.width && this.y+(this.radius/2) >= player.y && this.y+(this.radius/2) <= player.y+player.height
             ||
             this.x+(this.radius/2) >= player.x && this.x+(this.radius/2) <= player.x+player.width && this.y+(this.radius/2) >= player.y && this.y+(this.radius/2) <= player.y+player.height){
-                this.directionY = 'up';
+                if(this.behavior == 'phisic'){
+                    this.directionY = 'up';
+                } else {
+                    let middle = player.x+(player.width/2);
+                    let left = player.x;
+                    let right = player.x+player.width;
+                    if(this.x-(this.radius/2) <= middle-15 && this.x-(this.radius/2) >= left
+                    ||
+                    this.x+(this.radius/2) <= middle-15 && this.x+(this.radius/2) >= left
+                    ){
+                        if(this.directionX == 'right'){
+                            this.directionX = 'left';
+                        }
+                    }
+                    if(this.x-(this.radius/2) >= middle+15 && this.x-(this.radius/2) <= right
+                    ||
+                    this.x+(this.radius/2) >= middle+15 && this.x+(this.radius/2) <= right
+                    ){
+                        if(this.directionX == 'left'){
+                            this.directionX = 'right';
+                        }
+                    }
+                    this.directionY = 'up';
+                }
             }
             if(this.y+(this.radius/2) >= window.innerHeight-20){
                 this.directionY = 'none';

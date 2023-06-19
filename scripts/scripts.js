@@ -17,7 +17,7 @@ let buttonStart = document.getElementById('start');
 let message = document.getElementById('message');
 
 function listenForChanges(){
-    let ids = ['ball_size','ball_speed','player_bar_size','blocks_size','blocks_rows','player_speed'];
+    let ids = ['ball_size','ball_speed','player_bar_size','blocks_size','blocks_rows','player_speed', 'behavior'];
 
     ids.forEach(id => {
         let element = document.getElementById(id);
@@ -89,6 +89,16 @@ function listenForChanges(){
                         break;
                     case 'very_fast':
                         player.speed = 40;
+                        break;
+                }
+            }
+            if(id == 'behavior'){
+                switch (element.value){
+                    case 'phisic':
+                        ball.behavior = 'phisic';
+                        break;
+                    case 'anormal':
+                        ball.behavior = 'anormal';
                         break;
                 }
             }
